@@ -43,6 +43,10 @@
     "M8": {
       "name": "Gentle Mates",
       "id": "M8"
+    },
+    "APK": {
+      "name": "Apeks",
+      "id": "APK"
     }
   },
   "americas": {
@@ -87,8 +91,12 @@
       "id": "C9"
     },
     "G2": {
-      "name": "G2",
+      "name": "G2 Esports",
       "id": "G2"
+    },
+    "2G": {
+      "name": "2Game Esports",
+      "id": "2G"
     }
   },
   "pacific": {
@@ -132,9 +140,13 @@
       "name": "Global Esports",
       "id": "GE"
     },
-    "BLD": {
-      "name": "BLEED",
-      "id": "BLD"
+    "SPG": {
+      "name": "Sin Prisa Gaming",
+      "id": "SPG"
+    },
+    "BME": {
+      "name": "BOOM Esports",
+      "id": "BME"
     }
   },
   "china": {
@@ -181,6 +193,10 @@
     "DRG": {
       "name": "Dragon Ranger Gaming",
       "id": "DRG"
+    },
+    "XLG": {
+      "name": "Xi Lai Gaming",
+      "id": "XLG"
     }
   }
 }
