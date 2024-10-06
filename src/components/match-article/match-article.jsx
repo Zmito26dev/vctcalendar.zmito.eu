@@ -1,19 +1,19 @@
 import { useState } from "react"
 import "./match-article.css"
 
-export default function MatchArticle({id, label, matchHour, defaultChecked, teams, teamsSelected}) {
+export default function MatchArticle({id, label, matchHour, defaultChecked, teams, dteam1, dteam2, onTeamChange}) {
   const [matchEnabled, setMatchEnabled] = useState(defaultChecked)
-  const [team1, setTeam1] = useState(teamsSelected.team1)
-  const [team2, setTeam2] = useState(teamsSelected.team2)
+  const [team1, setTeam1] = useState(dteam1)
+  const [team2, setTeam2] = useState(dteam2)
 
   const handleTeam1Change = (e) => {
     setTeam1(e.target.value);
-    teamsSelected.team1 = e.target.value
+    onTeamChange("team1", e.target.value);
   };
 
   const handleTeam2Change = (e) => {
     setTeam2(e.target.value);
-    teamsSelected.team2 = e.target.value
+    onTeamChange("team2", e.target.value);
   };
 
   return (

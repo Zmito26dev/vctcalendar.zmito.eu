@@ -13,8 +13,10 @@ export default function App() {
   const [currentWidget, setCurrentWidget] = useState({});
 
   const canvas = useRef(null)
-  const match1info = { hour: "10:00", team1: "TH", team2: "GEN" };
-  const match2info = { hour: "13:00", team1: "KOI", team2: "GX" };
+  const [matchInfo, setMatchInfo] = useState({
+    match1: { hour: "10:00", team1: "TH", team2: "GEN" },
+    match2: { hour: "13:00", team1: "KOI", team2: "GX" },
+  });
   
   useEffect(() => {
     fetch('./teams.json')
@@ -60,6 +62,16 @@ export default function App() {
     )
   }
 
+  const handleTeamChange = (matchId, team, newValue) => {
+    setMatchInfo(prevMatchInfo => ({
+      ...prevMatchInfo,
+      [matchId]: {
+        ...prevMatchInfo[matchId],
+        [team]: newValue
+      }
+    }));
+  };
+  
   const handleCanvasGeneration = async () => {
     const ctx = canvas.current.getContext('2d');
     const bg = new Image();
@@ -74,10 +86,10 @@ export default function App() {
     ctx.textBaseline = 'middle';
 
     bg.src = currentWidget.match1.widgetImg;
-    m1t1.src = `/teams/${match1info.team1}.png`;
-    m1t2.src = `/teams/${match1info.team2}.png`;
-    m2t1.src = `/teams/${match2info.team1}.png`;
-    m2t2.src = `/teams/${match2info.team2}.png`;
+    m1t1.src = `/teams/${matchInfo.match1.team1}.png`;
+    m1t2.src = `/teams/${matchInfo.match1.team2}.png`;
+    m2t1.src = `/teams/${matchInfo.match2.team1}.png`;
+    m2t2.src = `/teams/${matchInfo.match2.team2}.png`;
 
     await Promise.all([
       new Promise(resolve => bg.onload = resolve),
@@ -127,8 +139,26 @@ export default function App() {
           </div>
           <div className="options-group">
             <h2 className="option-label">Matches:</h2>
-            <MatchArticle id="match1" label="First Match" matchHour={match1info.hour} teams={teams} teamsSelected={match1info} defaultChecked />
-            <MatchArticle id="match2" label="Second Match" matchHour={match2info.hour} teams={teams} teamsSelected={match2info} defaultChecked />
+            <MatchArticle 
+              id="match1" 
+              label="First Match" 
+              matchHour={matchInfo.match1.hour} 
+              teams={teams} 
+              dteam1={matchInfo.match1.team1} 
+              dteam2={matchInfo.match1.team2}
+              onTeamChange={(team, value) => handleTeamChange("match1", team, value)}
+              defaultChecked 
+            />
+            <MatchArticle 
+              id="match2" 
+              label="Second Match" 
+              matchHour={matchInfo.match2.hour} 
+              teams={teams} 
+              dteam1={matchInfo.match2.team1} 
+              dteam2={matchInfo.match2.team2}
+              onTeamChange={(team, value) => handleTeamChange("match2", team, value)}
+              defaultChecked
+            />
           </div>
           <div className="options-group">
             <h2 className="option-label">Widget style:</h2>
