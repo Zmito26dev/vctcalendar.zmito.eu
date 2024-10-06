@@ -2,13 +2,13 @@ import { useState, useEffect, useRef } from 'react'
 import MatchArticle from './components/match-article/match-article';
 import LogoAnimation from './components/logo-animation/logo-animation';
 import WidgetSelector from './components/widget-select/widget-select';
-import { dlIcon, vctIcon } from './assets/svgs'
+import { dlIcon, vctIcon, zmitoLogo } from './assets/svgs'
 
 const today = new Date();
 
 export default function App() {
   const [dayValue, setDayValue] = useState(String(today.getDate() + 1).padStart(2, '0')+"/"+String(today.getMonth() + 1).padStart(2, '0'));
-  const [selectedRegions, setSelectedRegions] = useState(["emea"]);
+  const [selectedLists, setSelectedLists] = useState(["emea"]);
   const [teams, setTeams] = useState([]);
   const [currentWidget, setCurrentWidget] = useState({});
 
@@ -24,7 +24,7 @@ export default function App() {
       .then((data) => {
         const filteredTeams = [];
         for (const region in data) {
-          if (selectedRegions.includes(region)) {
+          if (selectedLists.includes(region)) {
             for (const teamId in data[region]) {
               filteredTeams.push(data[region][teamId]);
             }
@@ -32,7 +32,7 @@ export default function App() {
         }
         setTeams(filteredTeams);
       });
-  }, [selectedRegions]);
+  }, [selectedLists]);
 
   useEffect(() => {
     const ctx = canvas.current.getContext('2d');
@@ -47,16 +47,16 @@ export default function App() {
   const TeamListSelect = ({id, label}) => {
     const handleCheckboxChange = (event) => {
       const { value } = event.target;
-      if (selectedRegions.length === 1 && !event.target.checked) return;
-      const updatedRegions = selectedRegions.includes(value)
-        ? selectedRegions.filter(region => region !== value)
-        : [...selectedRegions, value];
-      setSelectedRegions(updatedRegions);
+      if (selectedLists.length === 1 && !event.target.checked) return;
+      const updatedRegions = selectedLists.includes(value)
+        ? selectedLists.filter(region => region !== value)
+        : [...selectedLists, value];
+      setSelectedLists(updatedRegions);
     };
 
     return (
       <li>
-        <input className="tl-checkbox" type="checkbox" id={id + "-cb"} value={id} checked={selectedRegions.includes(id)} onChange={handleCheckboxChange}/>
+        <input className="tl-checkbox" type="checkbox" id={id + "-cb"} value={id} checked={selectedLists.includes(id)} onChange={handleCheckboxChange}/>
         <label className="tl-label" htmlFor={id + "-cb"}>{label}</label>
       </li>
     )
@@ -111,7 +111,7 @@ export default function App() {
     const dataURL = canvas.current.toDataURL('image/png');
     const a = document.createElement('a');
     a.href = dataURL;
-    a.download = 'download.png';
+    a.download = `vct-widget-${matchInfo.match1.team1}-${matchInfo.match2.team1}.png`;
     a.click();
   };
 
@@ -131,7 +131,7 @@ export default function App() {
           <div className="options-group">
             <h2 className="option-label">Team lists:</h2>
             <ul className="teams-list">
-              <TeamListSelect id="emea" label="VCT Emea"/>
+              <TeamListSelect id="emea" label="VCT Emea" />
               <TeamListSelect id="americas" label="VCT Americas" />
               <TeamListSelect id="pacific" label="VCT Pacific" />
               <TeamListSelect id="china" label="VCT China" />
@@ -177,6 +177,10 @@ export default function App() {
           <canvas className="canvas" ref={canvas} width={1000} height={1000}></canvas>
         </div>
       </div>
+      <a className="info" href="https://links.zmito.eu" target="_blank">
+        <p className="info-text">Created by </p>
+        {zmitoLogo}
+      </a>
     </div>
   )
 }
