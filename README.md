@@ -1,8 +1,8 @@
-# React + Vite
+# VCT CALENDAR GENERATOR
+Website to create images or widgets with VCT matches of the day.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Official Website](https://vctcalendar.zmito26.xyz)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> [!NOTE]
+> This is a very early version of the website, temporarily only VALORANT CHAMPIONS teams are available.
