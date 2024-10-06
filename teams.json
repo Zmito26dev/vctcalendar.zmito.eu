@@ -1,0 +1,186 @@
+{
+  "emea": {
+    "TH": {
+      "name": "Team Heretics",
+      "id": "TH"
+    },
+    "FNC": {
+      "name": "Fnatic",
+      "id": "FNC"
+    },
+    "GX": {
+      "name": "GIANTX",
+      "id": "GX"
+    },
+    "KC": {
+      "name": "Karmine Corp",
+      "id": "KC"
+    },
+    "KOI": {
+      "name": "KOI",
+      "id": "KOI"
+    },
+    "NAVI": {
+      "name": "Natus Vincere",
+      "id": "NAVI"
+    },
+    "TL": {
+      "name": "Team Liquid",
+      "id": "TL"
+    },
+    "VIT": {
+      "name": "Team Vitality",
+      "id": "VIT"
+    },
+    "BBL": {
+      "name": "BBL Esports",
+      "id": "BBL"
+    },
+    "FUT": {
+      "name": "FUT Esports",
+      "id": "FUT"
+    },
+    "M8": {
+      "name": "Gentle Mates",
+      "id": "M8"
+    }
+  },
+  "americas": {
+    "100T": {
+      "name": "100 Thieves",
+      "id": "100T"
+    },
+    "NRG": {
+      "name": "NRG Esports",
+      "id": "NRG"
+    },
+    "SEN": {
+      "name": "Sentinels",
+      "id": "SEN"
+    },
+    "LOUD": {
+      "name": "LOUD",
+      "id": "LOUD"
+    },
+    "LEV": {
+      "name": "LEVIATÁN",
+      "id": "LEV"
+    },
+    "KRU": {
+      "name": "KRÜ Esports",
+      "id": "KRU"
+    },
+    "FUR": {
+      "name": "FURIA Esports",
+      "id": "FUR"
+    },
+    "MIBR": {
+      "name": "MIBR",
+      "id": "MIBR"
+    },
+    "EG": {
+      "name": "Evil Geniuses",
+      "id": "EG"
+    },
+    "C9": {
+      "name": "Cloud9",
+      "id": "C9"
+    },
+    "G2": {
+      "name": "G2",
+      "id": "G2"
+    }
+  },
+  "pacific": {
+    "DRX": {
+      "name": "DRX",
+      "id": "DRX"
+    },
+    "ZETA": {
+      "name": "ZETA Division",
+      "id": "ZETA"
+    },
+    "PRX": {
+      "name": "Paper Rex",
+      "id": "PRX"
+    },
+    "DFM": {
+      "name": "DetonatioN FocusMe",
+      "id": "DFM"
+    },
+    "GEN": {
+      "name": "Gen.G",
+      "id": "GEN"
+    },
+    "RRQ": {
+      "name": "Rex Regum Qeon",
+      "id": "RRQ"
+    },
+    "T1": {
+      "name": "T1",
+      "id": "T1"
+    },
+    "TLN": {
+      "name": "Talon Esports",
+      "id": "TLN"
+    },
+    "TS": {
+      "name": "Team Secret",
+      "id": "TS"
+    },
+    "GE": {
+      "name": "Global Esports",
+      "id": "GE"
+    },
+    "BLD": {
+      "name": "BLEED",
+      "id": "BLD"
+    }
+  },
+  "china": {
+    "BLG": {
+      "name": "Bilibili Gaming",
+      "id": "BLG"
+    },
+    "EDG": {
+      "name": "Edward Gaming",
+      "id": "EDG"
+    },
+    "NOVA": {
+      "name": "Nova Esports",
+      "id": "NOVA"
+    },
+    "WOL": {
+      "name": "Wolves Esports",
+      "id": "WOL"
+    },
+    "AG": {
+      "name": "All Gamers",
+      "id": "AG"
+    },
+    "FPX": {
+      "name": "FunPlus Phoenix",
+      "id": "FPX"
+    },
+    "JDG": {
+      "name": "JD Gaming",
+      "id": "JDG"
+    },
+    "TYL": {
+      "name": "TYLOO",
+      "id": "TYL"
+    },
+    "TEC": {
+      "name": "Titan Esports Club",
+      "id": "TEC"
+    },
+    "TE": {
+      "name": "Trace Esports",
+      "id": "TE"
+    },
+    "DRG": {
+      "name": "Dragon Ranger Gaming",
+      "id": "DRG"
+    }
+  }
+}
