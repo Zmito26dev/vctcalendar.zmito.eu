@@ -85,7 +85,7 @@ export default function App() {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
-    bg.src = currentWidget.match1.widgetImg;
+    bg.src = currentWidget.match2.widgetImg;
     m1t1.src = `/teams/${matchInfo.match1.team1}.png`;
     m1t2.src = `/teams/${matchInfo.match1.team2}.png`;
     m2t1.src = `/teams/${matchInfo.match2.team1}.png`;
@@ -99,12 +99,13 @@ export default function App() {
       new Promise(resolve => m2t2.onload = resolve)
     ]);
 
+    const drawPositions = currentWidget.match2.positions
     ctx.drawImage(bg, 0, 0, canvas.current.width, canvas.current.height);
-    ctx.fillText(dayValue, 500, 322);
-    ctx.drawImage(m1t1, 225, 427, 160, 160);
-    ctx.drawImage(m1t2, 614, 427, 160, 160);
-    ctx.drawImage(m2t1, 225, 677, 160, 160);
-    ctx.drawImage(m2t2, 614, 677, 160, 160);
+    ctx.fillText(dayValue, drawPositions.title[0], drawPositions.title[1]);
+    ctx.drawImage(m1t1, drawPositions.m1_t1[0], drawPositions.m1_t1[1], drawPositions.m1_t1[2], drawPositions.m1_t1[3]);
+    ctx.drawImage(m1t2, drawPositions.m1_t2[0], drawPositions.m1_t2[1], drawPositions.m1_t2[2], drawPositions.m1_t2[3]);
+    ctx.drawImage(m2t1, drawPositions.m2_t1[0], drawPositions.m2_t1[1], drawPositions.m2_t1[2], drawPositions.m2_t1[3]);
+    ctx.drawImage(m2t2, drawPositions.m2_t2[0], drawPositions.m2_t2[1], drawPositions.m2_t2[2], drawPositions.m2_t2[3]);
   };
 
   const handleCanvasDl = () => {

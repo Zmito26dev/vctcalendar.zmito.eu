@@ -1,61 +1,71 @@
 {
     "emea": {
         "placeholderImg": "/widgets/placeholders/emea.png",
-        "match1": {
+        "match2": {
             "widgetImg": "/widgets/emea.png",
             "positions": {
-                "title": "",
-                "match1-hour": "",
-                "match1-team1": "",
-                "match1-team2": ""
+                "title": [500, 322],
+                "hour": null,
+                "m1_t1": [225, 427, 160, 160],
+                "m1_t2": [614, 427, 160, 160],
+                "m2_t1": [225, 677, 160, 160],
+                "m2_t2": [614, 677, 160, 160]
             }
         }
     },
     "americas": {
         "placeholderImg": "/widgets/placeholders/americas.png",
-        "match1": {
+        "match2": {
             "widgetImg": "/widgets/americas.png",
             "positions": {
-                "title": "",
-                "match1-hour": "",
-                "match1-team1": "",
-                "match1-team2": ""
+                "title": [500, 322],
+                "hour": null,
+                "m1_t1": [225, 427, 160, 160],
+                "m1_t2": [614, 427, 160, 160],
+                "m2_t1": [225, 677, 160, 160],
+                "m2_t2": [614, 677, 160, 160]
             }
         }
     },
     "pacific": {
         "placeholderImg": "/widgets/placeholders/pacific.png",
-        "match1": {
+        "match2": {
             "widgetImg": "/widgets/pacific.png",
             "positions": {
-                "title": "",
-                "match1-hour": "",
-                "match1-team1": "",
-                "match1-team2": ""
+                "title": [500, 322],
+                "hour": null,
+                "m1_t1": [225, 427, 160, 160],
+                "m1_t2": [614, 427, 160, 160],
+                "m2_t1": [225, 677, 160, 160],
+                "m2_t2": [614, 677, 160, 160]
             }
         }
     },
     "china": {
         "placeholderImg": "/widgets/placeholders/china.png",
-        "match1": {
+        "match2": {
             "widgetImg": "/widgets/china.png",
             "positions": {
-                "title": "",
-                "match1-hour": "",
-                "match1-team1": "",
-                "match1-team2": ""
+                "title": [500, 322],
+                "hour": null,
+                "m1_t1": [225, 427, 160, 160],
+                "m1_t2": [614, 427, 160, 160],
+                "m2_t1": [225, 677, 160, 160],
+                "m2_t2": [614, 677, 160, 160]
             }
         }
     },
     "rbhg": {
         "placeholderImg": "/widgets/placeholders/rbhg.png",
-        "match1": {
+        "match2": {
             "widgetImg": "/widgets/rbhg.png",
             "positions": {
-                "title": "",
-                "match1-hour": "",
-                "match1-team1": "",
-                "match1-team2": ""
+                "title": [500, 322],
+                "hour": null,
+                "m1_t1": [225, 427, 160, 160],
+                "m1_t2": [614, 427, 160, 160],
+                "m2_t1": [225, 677, 160, 160],
+                "m2_t2": [614, 677, 160, 160]
             }
         }
     }
