@@ -291,9 +291,12 @@ html {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.tl-checkbox {
+.tl-checkboxd {
   margin: 0px 10px 0px 0px;
   padding: 0;
   border: 0;
@@ -303,11 +306,29 @@ html {
   background-color: red;
 }
 
+.tl-select {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.tl-checkbox {
+  margin: 0px 8px 0px 0px;
+  padding: 0;
+  border: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: #0e0e0e;
+}
+
 .tl-label {
   font-family: "Poppins", system-ui;
   font-weight: 400;
   font-style: normal;
   font-size: 22px;
+  cursor: pointer;
 }
 
 .widgets-container {

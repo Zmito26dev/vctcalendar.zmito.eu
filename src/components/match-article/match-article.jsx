@@ -1,10 +1,16 @@
 import { useState } from "react"
 import "./match-article.css"
 
-export default function MatchArticle({id, label, matchHour, defaultChecked, teams, dteam1, dteam2, onTeamChange}) {
+export default function MatchArticle({id, label, dhour, onMatchHourChange, defaultChecked, teams, dteam1, dteam2, onTeamChange}) {
   const [matchEnabled, setMatchEnabled] = useState(defaultChecked)
+  const [matchHour, setMatchHour] = useState(dhour)
   const [team1, setTeam1] = useState(dteam1)
   const [team2, setTeam2] = useState(dteam2)
+
+  const handleMatchHourChange = (e) => {
+    setMatchHour(e.target.value);
+    onMatchHourChange(e.target.value);
+  };
 
   const handleTeam1Change = (e) => {
     setTeam1(e.target.value);
@@ -18,11 +24,11 @@ export default function MatchArticle({id, label, matchHour, defaultChecked, team
 
   return (
     <div className="match-container">
-      <input className="tl-checkbox" type="checkbox" id={id + "-cb"} defaultChecked={defaultChecked} onChange={() => setMatchEnabled(!matchEnabled)}/>
+      <input className="tl-checkboxd" type="checkbox" id={id + "-cb"} defaultChecked={defaultChecked} onChange={() => setMatchEnabled(!matchEnabled)}/>
       <label className="tl-label" htmlFor={id + "-cb"}>{label}</label>
       <article style={{margin:"0 0 10px 0"}}>
         {!matchEnabled && <div className="match-disabled"></div>}
-        <input className="input" type="text" placeholder="day-input" defaultValue={matchHour} />
+        <input className="input time-input" type="time" name="" id="" defaultValue={matchHour} onChange={handleMatchHourChange}/>
         <div style={{marginTop:"10px", width:"100%", display:"flex", justifyContent:"center"}}>
           <div className="team-selector">
             <div className="team-img">

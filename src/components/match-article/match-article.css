@@ -81,3 +81,8 @@
 .team-selector-input::-webkit-scrollbar-thumb {
   background: white;
 }
+
+.time-input::-webkit-calendar-picker-indicator{
+  margin-right: 8px;
+  filter: invert(100%);
+}

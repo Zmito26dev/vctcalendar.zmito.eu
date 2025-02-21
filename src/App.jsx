@@ -54,13 +54,26 @@ export default function App() {
       setSelectedLists(updatedRegions);
     };
 
+    // const [isSelected, setIsSelected] = useState(selectedLists.includes(id))
+
     return (
-      <li>
-        <input className="tl-checkbox" type="checkbox" id={id + "-cb"} value={id} checked={selectedLists.includes(id)} onChange={handleCheckboxChange}/>
+      <div className="">
+        <input className="tl-checkboxd" type="checkbox" id={id + "-cb"} value={id} checked={selectedLists.includes(id)} onChange={handleCheckboxChange}/>
+        {/* <div className="tl-checkbox"></div> */}
         <label className="tl-label" htmlFor={id + "-cb"}>{label}</label>
-      </li>
+      </div>
     )
   }
+
+  const handleHourChange = (matchId, newValue) => {
+    setMatchInfo(prevMatchInfo => ({
+      ...prevMatchInfo,
+      [matchId]: {
+        ...prevMatchInfo[matchId],
+        ["hour"]: newValue
+      }
+    }));
+  };
 
   const handleTeamChange = (matchId, team, newValue) => {
     setMatchInfo(prevMatchInfo => ({
@@ -106,6 +119,17 @@ export default function App() {
     ctx.drawImage(m1t2, drawPositions.m1_t2[0], drawPositions.m1_t2[1], drawPositions.m1_t2[2], drawPositions.m1_t2[3]);
     ctx.drawImage(m2t1, drawPositions.m2_t1[0], drawPositions.m2_t1[1], drawPositions.m2_t1[2], drawPositions.m2_t1[3]);
     ctx.drawImage(m2t2, drawPositions.m2_t2[0], drawPositions.m2_t2[1], drawPositions.m2_t2[2], drawPositions.m2_t2[3]);
+
+    console.log(drawPositions.hour1)
+
+    ctx.font = '700 48px "Chakra Petch"';
+    if (drawPositions.hour1 !== null) {
+      ctx.fillText(matchInfo.match1.hour, drawPositions.hour1[0], drawPositions.hour1[1]);
+    }
+    if (drawPositions.hour2 !== null) {
+      ctx.fillText(matchInfo.match2.hour, drawPositions.hour2[0], drawPositions.hour2[1]);
+    }
+
   };
 
   const handleCanvasDl = () => {
@@ -122,7 +146,7 @@ export default function App() {
       <div className="options">
         <div className="title">
           {vctIcon}
-          <h1 className="title-text">MATCH WIDGET GENERATOR</h1>
+          <h1 className="title-text">VCT WIDGET GENERATOR</h1>
         </div>
         <div className="options-list">
           <div className="options-group">
@@ -143,8 +167,9 @@ export default function App() {
             <MatchArticle 
               id="match1" 
               label="First Match" 
-              matchHour={matchInfo.match1.hour} 
-              teams={teams} 
+              dhour={matchInfo.match1.hour}
+              onMatchHourChange={(value) => handleHourChange("match1", value)}
+              teams={teams}
               dteam1={matchInfo.match1.team1} 
               dteam2={matchInfo.match1.team2}
               onTeamChange={(team, value) => handleTeamChange("match1", team, value)}
@@ -153,7 +178,8 @@ export default function App() {
             <MatchArticle 
               id="match2" 
               label="Second Match" 
-              matchHour={matchInfo.match2.hour} 
+              dhour={matchInfo.match2.hour}
+              onMatchHourChange={(value) => handleHourChange("match2", value)}
               teams={teams} 
               dteam1={matchInfo.match2.team1} 
               dteam2={matchInfo.match2.team2}
