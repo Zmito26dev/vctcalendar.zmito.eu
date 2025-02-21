@@ -5,7 +5,8 @@
             "widgetImg": "/widgets/emea.png",
             "positions": {
                 "title": [500, 322],
-                "hour": null,
+                "hour1": null,
+                "hour2": null,
                 "m1_t1": [225, 427, 160, 160],
                 "m1_t2": [614, 427, 160, 160],
                 "m2_t1": [225, 677, 160, 160],
@@ -19,7 +20,8 @@
             "widgetImg": "/widgets/americas.png",
             "positions": {
                 "title": [500, 322],
-                "hour": null,
+                "hour1": null,
+                "hour2": null,
                 "m1_t1": [225, 427, 160, 160],
                 "m1_t2": [614, 427, 160, 160],
                 "m2_t1": [225, 677, 160, 160],
@@ -33,7 +35,8 @@
             "widgetImg": "/widgets/pacific.png",
             "positions": {
                 "title": [500, 322],
-                "hour": null,
+                "hour1": null,
+                "hour2": null,
                 "m1_t1": [225, 427, 160, 160],
                 "m1_t2": [614, 427, 160, 160],
                 "m2_t1": [225, 677, 160, 160],
@@ -47,7 +50,23 @@
             "widgetImg": "/widgets/china.png",
             "positions": {
                 "title": [500, 322],
-                "hour": null,
+                "hour1": null,
+                "hour2": null,
+                "m1_t1": [225, 427, 160, 160],
+                "m1_t2": [614, 427, 160, 160],
+                "m2_t1": [225, 677, 160, 160],
+                "m2_t2": [614, 677, 160, 160]
+            }
+        }
+    },
+    "masters": {
+        "placeholderImg": "/widgets/placeholders/masters.png",
+        "match2": {
+            "widgetImg": "/widgets/masters.png",
+            "positions": {
+                "title": [500, 322],
+                "hour1": [500, 552],
+                "hour2": [500, 802],
                 "m1_t1": [225, 427, 160, 160],
                 "m1_t2": [614, 427, 160, 160],
                 "m2_t1": [225, 677, 160, 160],
@@ -61,7 +80,8 @@
             "widgetImg": "/widgets/rbhg.png",
             "positions": {
                 "title": [500, 322],
-                "hour": null,
+                "hour1": null,
+                "hour2": null,
                 "m1_t1": [225, 427, 160, 160],
                 "m1_t2": [614, 427, 160, 160],
                 "m2_t1": [225, 677, 160, 160],
