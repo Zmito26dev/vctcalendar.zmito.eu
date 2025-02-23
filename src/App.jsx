@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import MatchArticle from './components/match-article/match-article';
 import LogoAnimation from './components/logo-animation/logo-animation';
 import WidgetSelector from './components/widget-select/widget-select';
-import { dlIcon, zmitoLogo } from './assets/svgs'
+import { dlIcon, zmitoLogo, checkIcon } from './assets/svgs'
 import logo from "/logo.svg"
 
 const today = new Date();
@@ -45,26 +45,32 @@ export default function App() {
     };
   }, [currentWidget]);
 
-  const TeamListSelect = ({id, label}) => {
-    const handleCheckboxChange = (event) => {
-      const { value } = event.target;
-      if (selectedLists.length === 1 && !event.target.checked) return;
-      const updatedRegions = selectedLists.includes(value)
-        ? selectedLists.filter(region => region !== value)
-        : [...selectedLists, value];
+  const TeamListSelect = ({ id, label }) => {
+    const [isSelected, setIsSelected] = useState(selectedLists.includes(id));
+  
+    const handleCheckboxChange = (value, checked) => {
+      if (selectedLists.length === 1 && !checked) return;
+      const updatedRegions = checked
+        ? [...selectedLists, value]
+        : selectedLists.filter((region) => region !== value);
       setSelectedLists(updatedRegions);
+      setIsSelected(checked);
     };
-
-    // const [isSelected, setIsSelected] = useState(selectedLists.includes(id))
-
+  
+    const handleClick = () => {
+      const newIsSelected = !isSelected;
+      handleCheckboxChange(id, newIsSelected);
+    };
+  
     return (
       <div className="">
-        <input className="tl-checkboxd" type="checkbox" id={id + "-cb"} value={id} checked={selectedLists.includes(id)} onChange={handleCheckboxChange}/>
-        {/* <div className="tl-checkbox"></div> */}
-        <label className="tl-label" htmlFor={id + "-cb"}>{label}</label>
+        <div className="select-input" tabIndex={0} onClick={handleClick}>
+          <div className="select-input-box">{isSelected && checkIcon}</div>
+          <p className="select-input-text">{label}</p>
+        </div>
       </div>
-    )
-  }
+    );
+  };
 
   const handleHourChange = (matchId, newValue) => {
     setMatchInfo(prevMatchInfo => ({

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { checkIcon } from "../../assets/svgs"
 import "./match-article.css"
 
 export default function MatchArticle({id, label, dhour, onMatchHourChange, defaultChecked, teams, dteam1, dteam2, onTeamChange}) {
@@ -24,8 +25,9 @@ export default function MatchArticle({id, label, dhour, onMatchHourChange, defau
 
   return (
     <div className="match-container">
-      <input className="tl-checkboxd" type="checkbox" id={id + "-cb"} defaultChecked={defaultChecked} onChange={() => setMatchEnabled(!matchEnabled)}/>
-      <label className="tl-label" htmlFor={id + "-cb"}>{label}</label>
+      <div className="select-input match-input" onClick={() => setMatchEnabled(!matchEnabled)} tabIndex={0}>
+        <div className="select-input-box">{matchEnabled && checkIcon}</div><p className="select-input-text">{label}</p>
+      </div>
       <article style={{margin:"0 0 10px 0"}}>
         {!matchEnabled && <div className="match-disabled"></div>}
         <input className="input time-input" type="time" name="" id="" defaultValue={matchHour} onChange={handleMatchHourChange}/>
