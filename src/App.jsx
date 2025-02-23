@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from 'react'
 import MatchArticle from './components/match-article/match-article';
 import LogoAnimation from './components/logo-animation/logo-animation';
 import WidgetSelector from './components/widget-select/widget-select';
-import { dlIcon, vctIcon, zmitoLogo } from './assets/svgs'
+import { dlIcon, zmitoLogo } from './assets/svgs'
+import logo from "/logo.svg"
 
 const today = new Date();
 
@@ -145,8 +146,7 @@ export default function App() {
       <LogoAnimation />
       <div className="options">
         <div className="title">
-          {vctIcon}
-          <h1 className="title-text">VCT WIDGET GENERATOR</h1>
+          <img src={logo} alt="Web logo" />
         </div>
         <div className="options-list">
           <div className="options-group">

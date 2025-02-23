@@ -104,7 +104,7 @@ html {
   user-select: none;
   margin: 15px 0px 0px 15px;
   width: calc(100% - 30px);
-  height: 140px;
+  min-height: 140px;
   background-color: #C5B075;
   border-radius: 8px;
   display: flex;
@@ -112,8 +112,8 @@ html {
   justify-content: center;
 }
 
-.title svg {
-  width: 80px;
+.title img {
+  height: 140px;
   height: auto;
 }
 
